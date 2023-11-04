@@ -1,7 +1,7 @@
 name: "ms-symfetch-action"
 description: "fetches binaries from microsoft's symbol server"
 branding:
-  icon: settings
+  icon: download
   color: black
 inputs:
   name:
