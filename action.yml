@@ -1,0 +1,25 @@
+name: "ms-symfetch-action"
+description: "fetches binaries from microsoft\"s symbol server"
+branding:
+  icon: settings
+  color: black
+inputs:
+  name:
+    description: "Name of the binary to fetch"
+  timestamp:
+    description: "Timestamp of the binary to fetch"
+  virtual_size:
+    description: "Virtual size of the binary to fetch"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+    - run: cargo install --locked ms-symfetch
+    - run: |
+        ms-symfetch \
+          ${{ inputs.NAME }} \
+          ${{ inputs.TIMESTAMP }} \
+          ${{ inputs.VIRTUAL_SIZE }}
+      shell: bash
