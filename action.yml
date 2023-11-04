@@ -1,5 +1,5 @@
 name: "ms-symfetch-action"
-description: "fetches binaries from microsoft\"s symbol server"
+description: "fetches binaries from microsoft's symbol server"
 branding:
   icon: settings
   color: black
